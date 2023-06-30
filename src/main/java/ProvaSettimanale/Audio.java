@@ -1,28 +1,44 @@
 package ProvaSettimanale;
 
-public class Audio extends Titolo implements Volume {
+public class Audio extends Titolo implements Volume, Play {
 
 	
-	private double durata;
+	private int durata;
 	private int volume;
 	
 	
-	public Audio (String _titolo, double _durata, int _volume) {
+	public Audio (String _titolo, int _durata, int _volume) {
 	   
 		super(_titolo);
 		
-		this.titolo = _titolo;
 		this.durata = _durata;
 		this.volume= _volume;
 
 		
 	}
 	
+	// METODO PLAY
+	
+	public void play() {
+		
+		String esclamativo = "!";
+		
+		for (int i = 0; i < volume ; i++) {
+		
+		System.out.println(this.titolo + esclamativo.repeat(volume));
+		
+		}
+	}
+	
+	// IMPLEMENTAZIONE METODI INTERFACCIA VOLUME
+	
 	public void volUp (int num ) {
 		
 		if( num > volume) {
 			
 			volume = num; 
+		} else { 
+			System.out.println("non puoi abbassare il volume");
 		}
 	}
 	
@@ -31,17 +47,19 @@ public class Audio extends Titolo implements Volume {
 		if( num < volume) {
 			
 			volume = num; 
+		} else { 
+			System.out.println("non puoi alzare il volume");
 		}
 	}
 	
 	
 	// GETTERS AND SETTERS
 
-	public double getDurata() {
+	public int getDurata() {
 		return durata;
 	}
 
-	public void setDurata(double durata) {
+	public void setDurata(int durata) {
 		this.durata = durata;
 	}
 

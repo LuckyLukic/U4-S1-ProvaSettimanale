@@ -1,21 +1,34 @@
 package ProvaSettimanale;
 
-public class Video extends Titolo implements Volume, Luminosita{
+public class Video extends Titolo implements Volume, Luminosita, Play{
 	
-	private double durata;
+	private int durata;
 	private int volume;
 	private int luminosita;
 	
 
-	public Video (String _titolo, double _durata, int _volume, int _luminosita ) {
+	public Video (String _titolo, int _durata, int _volume, int _luminosita ) {
 	   
 		super(_titolo);
 		
-		this.titolo = _titolo;
 		this.durata = _durata;
 		this.volume = _volume;
 		this.luminosita = _luminosita;
 
+	}
+	
+	// METODO PLAY
+	
+    public void play() {
+		
+		String esclamativo = "!";
+		String asterisco = "*";
+		
+		for (int i = 0; i < durata/60 ; i++) {
+		
+		System.out.println(this.titolo + esclamativo.repeat(volume) + asterisco.repeat(luminosita));
+		
+		}
 	}
 	
 	// implementazione metodi interfaccia Volume
@@ -41,29 +54,33 @@ public class Video extends Titolo implements Volume, Luminosita{
     
 	public void lumUp (int num ) {
 			
-			if( num > volume) {
+			if( num > luminosita) {
 				
 				volume = num; 
+			} else { 
+				System.out.println("non puoi abbassare la luminosita'");
 			}
 		}
 		
 	public void lumDown (int num) {
 			
-			if( num < volume) {
+			if( num < luminosita) {
 				
 				volume = num; 
-			}	
+			}	else { 
+				System.out.println("non puoi alzare la luminosita'");
+			}
 	
     }    
 	
 	
   // getters and setters	
 	
-	public double getDurata() {
+	public int getDurata() {
 		return durata;
 	}
 
-	public void setDurata(double durata) {
+	public void setDurata(int durata) {
 		this.durata = durata;
 	}
 
