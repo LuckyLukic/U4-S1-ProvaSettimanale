@@ -6,17 +6,22 @@ public class Play implements Volume, Luminosita {
 	private int lum;
 	private int vol;
 	
-	public Play (int _durata, int _lum) {
-		
-		this.setDurata(_durata);
-		this.setLum(_lum);
+	public Play (int _durata, int _vol) {
+	
+	//AUDIO	
+		this.durata = _durata;
+		this.vol = _vol;
 	}
 	
-	public Play(int _durata, int _vol, int lum) {
+	//VIDEO 
+	public Play(int _durata, int _vol, int _lum) {
 		
-		this.setDurata(_durata);
-		this.setVol(_vol);
+		this.durata = _durata;
+		this.lum = _lum;
+		this.vol = _vol;
+		
 	}
+	
 	
 	public static void playAudio () {
 		
