@@ -2,8 +2,6 @@ package ProvaSettimanale;
 
 public interface Play {
 	
-	 static void play () {
-
-		}
+	  public void play ();
 
 }

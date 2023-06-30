@@ -35,38 +35,45 @@ public class Video extends Titolo implements Volume, Luminosita, Play{
 	
     public void volUp (int num ) {
 		
-		if( num > volume) {
+		if ( num > volume ) {
 			
 			volume = num; 
+			
+		} else { 
+			System.out.println("non puoi abbassare la luminosita'");
 		}
 	}
 	
     public void volDown (int num) {
 		
-		if( num < volume) {
+		if ( num < volume ) {
 			
 			volume = num; 
+		} else { 
+			System.out.println("non puoi alzare la luminosita'");
 		}
 	}
     
+  
 		
    // implementazione metodi interfaccia Luminosita
     
-	public void lumUp (int num ) {
+    public void lumUp(int num) {
+		
+    	if( num > luminosita) {
 			
-			if( num > luminosita) {
-				
-				volume = num; 
-			} else { 
-				System.out.println("non puoi abbassare la luminosita'");
-			}
+			luminosita = num; 
+		}   else { 
+			System.out.println("non puoi abbassare la luminosita'");
 		}
+		
+	}
 		
 	public void lumDown (int num) {
 			
 			if( num < luminosita) {
 				
-				volume = num; 
+				luminosita = num; 
 			}	else { 
 				System.out.println("non puoi alzare la luminosita'");
 			}
@@ -115,8 +122,9 @@ public class Video extends Titolo implements Volume, Luminosita, Play{
 		return "Video [titolo = " + titolo + ", durata = " + durata + ", volume = " + volume + ", luminosita = " + luminosita
 				+ "]";
 	}
+
 	
-	
+
 	
 	
 }

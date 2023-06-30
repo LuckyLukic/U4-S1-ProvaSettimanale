@@ -10,7 +10,7 @@ public class Immagine extends Titolo implements Luminosita {
 		
 		super(_titolo);
 		
-		this.setLuminosita(_luminosita);
+		this.luminosita = _luminosita;
 		
 	}
 	
@@ -20,6 +20,34 @@ public class Immagine extends Titolo implements Luminosita {
 		String asterisco = "*";
 		System.out.print( this.titolo + asterisco.repeat(luminosita));
 	}
+	
+	// IMPLEMENTAZIONE INTERFACCIA LUMINOSITA
+	
+	 public void lumUp (int num) {
+			
+	    	if( num > luminosita) {
+				
+				luminosita = num; 
+				
+			}   else { 
+				System.out.println("non puoi abbassare la luminosita'");
+			}
+			
+	 }
+			
+	 public void lumDown (int num) {
+				
+			if( num < luminosita) {
+					
+				luminosita = num; 
+				
+			}	else { 
+				System.out.println("non puoi alzare la luminosita'");
+			}
+		
+	    }    
+    
+    
 	
 	// GETTERS AND SETTERS
 

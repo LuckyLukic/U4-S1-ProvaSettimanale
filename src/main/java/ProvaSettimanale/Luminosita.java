@@ -2,14 +2,10 @@ package ProvaSettimanale;
 
 public interface Luminosita {
 	
+    public void lumUp (int num);
 	
-    static void lumlUp () {
-	
-	}
-
-    static void lumDown () {
+    public void lumDown (int num); 
     		
-	}
-}
+    }
 
 

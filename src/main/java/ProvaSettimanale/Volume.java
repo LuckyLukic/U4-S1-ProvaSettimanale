@@ -2,12 +2,8 @@ package ProvaSettimanale;
 
 public interface Volume {
 	
-    static void volUp () {
+     public void volUp (int num);	
 
-	}
-
-    static void volDown () {
-    		
-	}
-    
-}
+     public void volDown (int num); 
+     		
+    }

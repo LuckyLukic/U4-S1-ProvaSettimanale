@@ -31,7 +31,7 @@ public class ProvaSettimanale {
 		
 		Scanner scanner = new Scanner(System.in);
 		
-		Multimedia[] multimedia= new Multimedia[5]; 
+		Titolo[] multimedia = new Titolo[5]; 
 		
 		System.out.println("Cosa vuoi memorizzare: premi 1 per Immagine, 2 per Audio, 3 per Video");
 		int scelta = scanner.nextInt();
@@ -47,47 +47,63 @@ public class ProvaSettimanale {
 				String titolo = scanner.nextLine();
 				
 				System.out.println("imposta la luminosita' da 0 a 10");
-				//bisognerebbe mettere dei controlli
 				int luminosita = scanner.nextInt();
-				
-				
+				scanner.nextLine();
+					
 				Immagine immagine = new Immagine(titolo, luminosita);
 				
 				multimedia[i] = immagine;
 				break;
 				
-		/*	case 2 : 
+			case 2 : 
 				
 				System.out.println("Scrivi il titolo");
-				String titolo = scanner.nextLine();
+				titolo = scanner.nextLine();
+				
+				System.out.println("Scrivi la durata in secondi");
+				int durata = scanner.nextInt();
+				scanner.nextLine();
+				
+				System.out.println("imposta il volume da 0 a 10");
+				int volume = scanner.nextInt();
+				scanner.nextLine();
+					
+				Audio audio = new Audio (titolo, durata, volume);
+				
+				multimedia[i] = audio;
+				
+				break;	
+				
+            case 3 : 
+				
+				System.out.println("Scrivi il titolo");
+				titolo = scanner.nextLine();
+				
+				System.out.println("Scrivi la durata in secondi");
+				durata = scanner.nextInt();
+				scanner.nextLine();			
+
+                System.out.println("imposta il volume da 0 a 10");	
+				volume = scanner.nextInt();
+				scanner.nextLine();
 				
 				System.out.println("imposta la luminosita' da 0 a 10");
-				//bisognerebbe mettere dei controlli
-				int luminosita = scanner.nextInt();
+				luminosita = scanner.nextInt();
 				scanner.nextLine();
 				
 				
-				Immagine immagine = new Immagine(titolo, luminosita);
+				Video video = new Video (titolo, durata, volume, luminosita);
 				
-				multimedia[oggetto] = immagine;
+				multimedia[i] = video;
+				
 				break;	
 				
-			} */
-	
+			} 
+		}
 		
 		scanner.close();
 		
-		}
-		
-		
-		
-		
-	
-		
-		
-		
-		
-		
+	}
 	}
 
-}
+
