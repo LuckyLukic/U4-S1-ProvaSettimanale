@@ -6,7 +6,7 @@ public class ProvaSettimanale {
 	
 	public static void main(String[] args) {
 		
-		
+	// PROVE PER CREAZIONE OGGETTI E METODI	
 		
 		Audio audio1 = new Audio ("Alba Chiara", 250, 7);
 		System.out.println(audio1);
@@ -29,15 +29,25 @@ public class ProvaSettimanale {
 		immagine1.show();
 		
 		
+		
+		System.out.println("");
+		System.out.println("*********************");
+		System.out.println("");
+	
+	// CREAZIONE ARRAY
+		
 		Scanner scanner = new Scanner(System.in);
 		
 		Titolo[] multimedia = new Titolo[5]; 
 		
+		
+		for ( int i = 1; i <= multimedia.length; i++ ) {
+			
+		
 		System.out.println("Cosa vuoi memorizzare: premi 1 per Immagine, 2 per Audio, 3 per Video");
 		int scelta = scanner.nextInt();
+		scanner.nextLine();
 		
-		for ( int i = 0; i < multimedia.length; i++ ) {
-			
 		
 		switch (scelta) {
 			
@@ -53,6 +63,8 @@ public class ProvaSettimanale {
 				Immagine immagine = new Immagine(titolo, luminosita);
 				
 				multimedia[i] = immagine;
+				System.out.println("Oggetto numero " + i + " di " + multimedia.length + " memorizzato!");
+				System.out.println(" ");
 				break;
 				
 			case 2 : 
@@ -71,7 +83,8 @@ public class ProvaSettimanale {
 				Audio audio = new Audio (titolo, durata, volume);
 				
 				multimedia[i] = audio;
-				
+				System.out.println("Oggetto numero " + i + " di " + multimedia.length + " memorizzato!");
+				System.out.println(" ");
 				break;	
 				
             case 3 : 
@@ -95,8 +108,13 @@ public class ProvaSettimanale {
 				Video video = new Video (titolo, durata, volume, luminosita);
 				
 				multimedia[i] = video;
-				
+				System.out.println("Oggetto numero " + i + " di " + multimedia.length + " memorizzato!");
+				System.out.println(" ");
 				break;	
+				
+			default :
+				
+				System.out.println("scelta errata");
 				
 			} 
 		}
